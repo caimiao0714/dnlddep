@@ -2,7 +2,7 @@
 % Please edit documentation in R/download_dep.R
 \name{download_dep}
 \alias{download_dep}
-\title{To calculate the Elixhauser Comorbidity Index}
+\title{To download all the required packages to a specified local directory}
 \usage{
 download_dep(
   x,
@@ -11,16 +11,30 @@ download_dep(
 )
 }
 \arguments{
-\item{x}{Your data file in which Elixhauser Comorbidity Index is to be calculated}
+\item{x}{A vector of the package names to be downloaded.}
+
+\item{destination_dir}{Destination directory for the packages to be downloaded. The default is the current working directory.}
+
+\item{server_link}{The link of the server to download the packages from. The default is the official CRAN website (http://cran.rstudio.com/).}
 }
 \value{
-a vector: a new data.frame named "data". This data frame contains a new variable "Elix_Index": The Elixhauser Comorbidity Index, developed by Anne Elixhauser in 1998
+.tar.gz: All the R packages to be downloaded with the format of .tar.gz
 }
 \description{
-This file aims to calculate the Elixhauser Comorbidity Index.
+This function aims to download all the required packages to a specified local directory.
 }
 \note{
-The Elixhauser Comorbidity Index does not include age as a component of the index.
+
+}
+\examples{
+# download the dependencies, and all the dependencies of the dependencies, and so on of the package "cli".
+package_vec = pkg_dep_all('cli')
+# Depth: 1
+# Depth: 2
+
+package_vec
+# [1] "cli"     "glue"    "utils"   "methods"
+download_dep(package_vec)
 }
 \author{
 Miao Cai <email: miao.cai@outlook.com>

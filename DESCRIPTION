@@ -1,11 +1,10 @@
 Package: dnlddep
 Type: Package
-Title: Recursively download all the dependencies of an R package
+Title: An R package to recursively query and download all the dependencies of an R package
 Version: 0.1.0
 Authors@R: person("Miao", "Cai", email = "miao.cai@outlook.com", role = c("aut", "cre"))
 Maintainer: Miao Cai <miao.cai@outlook.com>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Description: This function includes 3 functions. pkg_dep1 aims to query all the dependencies of an R package as a vector; pkg_dep_all aims to recursively query all the dependencies, dependencies of the dependencies, and so on of an R package as a vector with unique elements; download_dep aims to download all the required packages to a specified local directory.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
